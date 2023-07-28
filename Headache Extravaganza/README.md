@@ -63,7 +63,6 @@ Rkrk! myzid g 7kdsdrk uswk roik vyv wk3knmr d5kwow lkuk ov
 lvkcck zvc hn k9bk g jk3wk omr sxktow suyex kdrouk,
 dkg g7ovod ps odrs -_- g xogs duwv (nrobs dkg hn)!
 ```
-<br>
 as we can se we have two parts the first one we have a like link we will se itt late but for now we will decrypt the second part 
 <br>
 we can do that through bruteforce the rot13 amount 
@@ -85,7 +84,6 @@ wait the end of the link looks like a youtube link but the first referring that 
 ```
 www.youtube.com/watch?v=M-R0YhVRYto
 ```
-<br>
 let's visit the link and see what we got :
 <br>
 <br>
@@ -109,7 +107,6 @@ and we got this :
 ```
 https://youtu.be/BoQHQDKMk9A
 ```
-<br>
 as well we see the channel description it have two encrypted messages they are both base64 and rot47. <br>
 let's take a look at the first one : <br><br>
 
@@ -144,7 +141,6 @@ so the key is "1337", we decrypt the whole text using this key and we get the fi
 ```
 flag{pr4c71c3_
 ```
-<br>
 now let's go back to the second message in the youtube video description, after decrypting that message we can see that it tells us to look at the vid name <br>
 lets do it :
 <br>
@@ -172,15 +168,10 @@ yet another two encrypted message , the first one dosen't matter so much but the
 ```
 STs7NzppXl5FSjpENjlFXUhIXkR7eEVkOXN2
 ```
-<br>
 it's a base64 with rot47 then rot13 with 10 amount in the end we get this discord server invite link :
-<br>
-<br>
-
 ```
 https://discord.gg/cVSd5rNQ
 ```
-<br>
 it's a normal looking discord server with nothing unusual but if we look at our discord roles we will see this :
 <br>
 <br>
@@ -278,7 +269,6 @@ we can see there is 5 points, with a base32 text :
 ```
 FB2WGN3LOYQDGMRAPJTCAIJANVVWQZ3FNIQGQ2ZAM53GU4LPEBXWO3TDEBVHO2RAH4UT2PJ6FB3WKN3NPAQGK3ZAGNSWQ3LYEB3HG6BAOBZXS4DFEBRGQIDRMVSGS4BAOFSWI2LQEAQSAZTYMEQG63JAPBZXS53JOAQHA2LQEBUXE2BAOF4GKMZANF4GYYZAKNLU2USYMMQGSIDHNRSXE4TJOAQGK6DMNF3CCLBAMJUCA33FOFUXAIDYMVQSA4DFMFUW4IBTMVYCAZTFMVUWQ3DFEAUT2PJ6FBTWU4LKNVXCA4LUPJYWU2JAOBXCAYTKG5VGSIDSMZSGW3LSNBWSA4LUPJWG2ZRANNXCAYLONFVHIIDEPEQGQ3LTNJSGMIDEMZZGU4JAM5VGQ3JANZZWM33KOIQGI2TLNVVHEIB7H47SYIBVMZ4WU5ZAGNTHG2LOEA3WM33GEBZTO2THEBZWMM3XNJVW2ZRAEEQDOZTPMYQHINLXMYQGO4LNNYQGUNLEEBSHSIDEMYZXE2TREBQWM4LONFTHS3TUOMQHC2TREBQW42LKOQTXQIB7EBZGMZBTMZUW42DNEBVHC3RANZXW4IDOMFTHC3TJNYQGU4JAMFXGS2TUEBXWMYTUPIQGO3LOEBRCAZ3GGNVGSIDOPJ2XC5DGNFXG2IDNPJWSAPZJEE
 ```
-<br>
 we decrypt that and we get this :
 
 ```
@@ -286,13 +276,182 @@ we decrypt that and we get this :
 (we7mx eo 3ehmx vsx psype bh qedip qedip ! fxa om xsywip pip irh qxe3 ixlc SWMRXc i glerrip exliv!, bh oeqip xea peain 3ep feeihle )==>
 (gjqjmn qtzqji pn bj7ji rfdkmrhm qtzlmf kn anijt dy hmsjdf dfrjq gjhm nsfojr djkmjr ???, 5fyjw 3fsin 7fof s7jg sf3wjkmf ! 7fof t5wf gqmn j5d dy df3rjq afqnifynts qjq anijt'x ? rfd3finhm jqn non nafqnin jq anijt ofbtz gmn b gf3ji nzuqtfinm mzm ?)!
 ```
-<br>
 so these are 3 lines with different encryption <br>
-first one is rot13 with 
+first one is rot13 with 24 amount:
 
+```
+sa7it 32 xd ! kifech fi ethom mela huh ?
+```
+second one is rot13 with 22 amount:
 
+```
+sa7it ak 3adit rot loula xd mazel mazel ! btw ki tousel lel end mta3 ethy OSINTy e channel ather!, xd kamel taw lawej 3al baaedha 
+```
+we need to do some osint huh ? <br>
+and the last one is rot13 with 21 amount:
 
+```
+belehi louled ki we7ed mayfhmch lougha fi video yt chneya yamel bech inajem yefhem ???, 5ater 3andi 7aja n7eb na3refha ! 7aja o5ra blhi e5y yt ya3mel validation lel video's ? may3adich eli iji ivalidi el video jawou bhi w ba3ed iuploadih huh ?
+```
+wait ... it's talikng about caption let's see caption <br>
+or more easy way is to see the video transcript : <br>
+<br>
 
+![2023-07-28_12-27](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/7ab34c8e-1ea3-4909-8c45-7dbfc684e45e)
+<br>
+<br>
+here we got a mega link and a random numbers :
 
+```
+https://mega.nz/file/UY1yVBJL
+```
+```
+2 3 8 10 12 15 27 30 36 38 43
+```
+<br>
+the mega link is locked by a password ... <br>
+and the numbers doesn't seem to be usuful yet ... <br>
+so let's try some osint on the youtube as he tells us above. <br>
+<br>
+and after some searching in the channel we found this post : <br>
+<br>
+<br>
 
+![2023-07-28_12-33](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/47c51c69-4563-42b6-8293-b72ba148f4d5)
+<br>
+<br>
+and there is a reply :
+<br>
+<br>
+![2023-07-28_12-34](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/da696fce-35d5-44be-8075-e3c77839b591)
+<br>
+<br>
+and we get this link 
 
+```
+https://ibb.co/3W3cyhV
+```
+it contains this image of qr code :
+<br>
+<br>
+
+![2023-07-28_12-35](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/4a442cb6-03da-40a3-9284-f9e687ddc94a)
+<br>
+<br>
+we use any qr code scanner online to get the data of this code <br>
+i just used this online qr code scanner and it gave me this link :
+<br>
+<br>
+
+![2023-07-28_12-37](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/db651ebe-b410-497d-b281-c6c0dbba878e)
+<br>
+<br>
+
+```
+https://mega.nz/file/QIFQjDKJ
+```
+it is also locked by a password ...<br>
+let's go back to this image of qr code and download it to do some steganography :
+<br>
+<br>
+
+![2023-07-28_12-39](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/4df613e1-c3be-418d-859d-394abc77c3c4)
+<br>
+<br>
+i used strings command and i found that there is some text in the end : <br>
+
+```
+2tvAccECAOvdlw92xDyoGq5muMCAXPJKUJZP3Yr1-wk
+```
+it's the key of the mega link, let's unlock it out :
+<br>
+<br>
+
+![2023-07-28_12-42](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/be8f204b-cb9e-4465-848e-4f0ab1037561)
+<br>
+<br>
+here we get an image ... <br>
+you can download it and do whatever ya want but it's all a rabbit hole <br>
+but there is a code at the end of the name that we can use :
+
+```
+aHR0cHM6Ly9zaG9ydHVybC5hdC9neXpBSg==
+```
+it's a base64 so :
+
+```
+https://shorturl.at/gyzAJ
+```
+here we got a link, it gave us a mega download link :
+<br>
+<br>
+
+![2023-07-28_12-47](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/eb58b15e-196f-494c-be5b-229907f1530b)
+<br>
+<br>
+this sound of audio seems to be a morse code. <br>
+let's go to some online audio morse code decode and upload the mp3 file : <br>
+<br>
+
+![2023-07-28_12-51](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/7895799c-c215-4662-a897-3bec3db725a9)
+<br>
+<br>
+here is the msg that we got after decrypting the audio,
+
+```
+7EAEPWFLAD6BEGB1YTD-LMNVH2SJRAN3E4IYUMZL5ZS 
+```
+now this seems to be the other decryption key of the mega link, but its not working <br>
+so let's get back to those random numbers now they seem to have some relation <br>
+because those numbers are indexes of letters in the key, <br>
+and if we make all that lower case and let only those upper case it will just give us the correct one. <br>
+to do this job we can get some help with a python script : 
+
+```python
+inputKey = "7EAEPWFLAD6BEGB1YTD-LMNVH2SJRAN3E4IYUMZL5ZS".lower()
+indexes = [2,3,8,10,12,15,27,30,36,38,43]
+outputKey = []
+i=1
+for letter in inputKey:
+    if i not in indexes:
+        outputKey.append(letter.upper())
+    else:
+        outputKey.append(letter)
+    i=i+1
+print(''.join(outputKey))
+
+```
+it will give us this key :
+
+```
+7eaEPWFlAd6bEGb1YTD-LMNVH2sJRaN3E4IyUmZL5Zs
+```
+and here we unlock the mega link, it gave us this video : 
+<br>
+<br>
+
+![2023-07-28_13-18](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/ff986419-9d04-4f3b-b750-9d369054f762)
+<br>
+<br>
+we download this video to find what it hides :
+<br>
+<br>
+![2023-07-28_13-20](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/eb8d365f-340e-4e5f-b38a-cc2513975a20)
+<br>
+<br>
+we type that command , and here we find a hidden encryption :
+
+```
+RjdISmJpIEZiSDxiOWZfTg==
+```
+we decrypt this using cyberchef <br>
+it's a base64 with rot47 and rot13 with amount 21 and it give us this :
+
+```
+part3: p3rf3c70}
+```
+congrats, you got it here is the full flag :
+
+```
+flag{pr4c71c3_M4K35_p3rf3c70}
+```
