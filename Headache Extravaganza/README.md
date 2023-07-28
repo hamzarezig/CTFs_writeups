@@ -145,6 +145,7 @@ so the key is "1337", we decrypt the whole text using this key and we get the fi
 ```
 flag{pr4c71c3_
 ```
+## second part of flag :
 now let's go back to the second message in the youtube video description, after decrypting that message we can see that it tells us to look at the vid name <br>
 lets do it :
 <br>
@@ -227,6 +228,7 @@ so now our flag is :
 ```
 flag{pr4c71c3_M4K35_
 ```
+## last part of flag :
 now let's get back to the first encrypted long text in xanax profile :
 <br>
 
@@ -460,3 +462,5 @@ congrats, you got it here is the full flag :
 ```
 flag{pr4c71c3_M4K35_p3rf3c70}
 ```
+<br>
+i hope this was usuful for you, and don't forget to throw a follow ;) 
