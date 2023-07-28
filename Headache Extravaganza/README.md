@@ -236,15 +236,16 @@ etgpp://bna.cluguyj.tsq/phbrqx/vdg2oz2pz0B
 ```
 this looks like a vigenere cipher <br>
 let's try decrypting this out .
-first we try xanax word ( since all the challenge talking about him... ) :
+first let's take a look at xanax profile in our main discord server :
 <br>
 <br>
-![2023-07-28_11-53](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/be116d5e-38a1-4ebb-bc84-c0e3f1ddb682)
+
+![2023-07-28_17-55](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/a09a83aa-cf31-4719-baa6-c6e7b3650a30)
 <br>
 <br>
 Mmmm ... <br>
-we see the word free ? <br>
-how it would be possibly ? <br>
+we see a special role, what is this ? <br>
+especially it have a key logo on it ?<br>
 freexanax ? : 
 <br>
 <br>
