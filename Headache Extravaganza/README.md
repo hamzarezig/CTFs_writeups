@@ -69,17 +69,182 @@ as we can se we have two parts the first one we have a like link we will se itt 
 we can do that through bruteforce the rot13 amount 
 <br>
 <br>
+
 ![2023-07-28_09-24](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/90953dad-dd7a-45d8-9a8a-5161544059db)
 <br>
 <br>
 as we can see in here it's a rot13 with 16 amount, obviously we know that because it's the only one readable in there. <br>
-you can decrypt on your own and see the full message but it's kinda useless, let's go back and take a look at the url provided 
+you can decrypt on your own and see the full message but it's kinda useless, let's go back and take a look at the url provided.
+<br>
+
+```
+domain.toplvldomain/watch?v=M-R0YhVRYto
+```
+wait the end of the link looks like a youtube link but the first referring that we need to guess it so we do and here is the link :
+<br>
+```
+www.youtube.com/watch?v=M-R0YhVRYto
+```
+<br>
+let's visit the link and see what we got :
+<br>
+<br>
+
+![2023-07-28_09-38](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/b9e5eedd-0cf1-4faf-a8a2-479a2d293b82)
+<br>
+<br>
+we get a youtube video but if we take a look closely at the video discription we will see that there is two encrypted messages, <br>
+the first one is a base64 encryption and the other is some hex encryption , <br>
+the second part is a note that says you need to click twice to copy the first part since its too long and you cannot copy it using mouse selection, <br>
+and after doing that and using cyberchef for decryption we get a message with another encrypted link , 
+<br>
+<br>
+![2023-07-28_09-45](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/81ce2982-592c-4ca9-8ac4-3f587a501652)
+<br>
+<br>
+it's a rot13 with 19 amount we obviously cracked this through bruteforc using the method above, <br>
+and we got this : 
+<br>
+
+```
+https://youtu.be/BoQHQDKMk9A
+```
+<br>
+as well we see the channel description it have two encrypted messages they are both base64 and rot47. <br>
+let's take a look at the first one : <br><br>
+
+![2023-07-28_10-31](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/be43780d-da25-4c20-a865-2538e34b3bd2)
+<br>
+<br>
+
+```
+57 5f 52 50 4a 43 41 03 52 04 02 54 02 6c
+```
+here we get some hex encrypted text, and it's telling us that it's the first part of the flage plus we will find xor in here, <br>
+but first what is xor encryption ? <br>
+it's an encryption you can learn more about it in [here](https://en.wikipedia.org/wiki/XOR_cipher) but let's learn more about his tricks :<br>
+<br>
+decrypted data + key = encrypted data <br>
+encrypted data + key = decrypted data <br>
+<br>
+but the trick in here is : <br>
+<br>
+decrypted data + encrypted data = key <br>
+<br>
+so lets take a look at what we know about the flag , it starts with flag{...<br>
+so using cyberchef we do this :
+<br>
+<br>
+
+![2023-07-28_11-04](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/b8f06dae-655d-464f-ab67-f2aef33988b8)
+<br>
+<br>
+so the key is "1337", we decrypt the whole text using this key and we get the first part of the flag :
+
+```
+flag{pr4c71c3_
+```
+<br>
+now let's go back to the second message in the youtube video description, after decrypting that message we can see that it tells us to look at the vid name <br>
+lets do it :
+<br>
+<br>
+
+![2023-07-28_09-53](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/cb2621c3-08dd-4691-a59d-a184a47448f5)
+<br>
+<br>
+lets decrypt this message and see what we got :
+<br>
+<br>
+
+![2023-07-28_09-56](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/b180cc69-1939-4950-99a7-59460f31e48c)
+<br>
+<br>
+we go to the about page of channel to see the email and stuff and see what we get :
+<br>
+<br>
+![2023-07-28_09-58](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/59786c4e-d42c-45ed-b3f3-63c5e99e0c18)
+<br>
+<br>
+yet another two encrypted message , the first one dosen't matter so much but the second one is this :
+<br>
+
+```
+STs7NzppXl5FSjpENjlFXUhIXkR7eEVkOXN2
+```
+<br>
+it's a base64 with rot47 then rot13 with 10 amount in the end we get this discord server invite link :
+<br>
+<br>
+
+```
+https://discord.gg/cVSd5rNQ
+```
+<br>
+it's a normal looking discord server with nothing unusual but if we look at our discord roles we will see this :
+<br>
+<br>
+
+![2023-07-28_10-05](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/e3a6290f-cb3e-4a2c-8d87-f1ab215c3736)
+<br>
+<br>
+yet another discord invite link, we join the second server and find that ther is some room with mesages :
+<br>
+<br>
+
+![2023-07-28_10-07](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/8521de92-08d8-4aed-871c-9a7b6abf7919)
+<br>
+<br>
+
+let's decrypt this one 
+<br>
+<br>
+![2023-07-28_10-22](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/1520d8f4-b0de-4ea1-ad3c-9ec268dddc55)
+<br>
+<br>
+
+it's telling us to visit xanax profile and see what we got :
+<br>
+<br>
+
+![2023-07-28_10-26](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/554370a0-bd4f-4c07-99a5-ac4b44a9946a)
+<br>
+<br>
+as you can see in the about we see some text with a pastebin link, let's see what's in that link  
+<br>
+![2023-07-28_11-31](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/1f8059c6-ef22-46a0-a8bb-46429fac90e2)
 
 
+```
+5AA=@i^^DDD]F<B?BI2]J<:^DHAJ5nlTc+TbcTc)TbbTbd0
+```
+<br>
+we decrypt this with cyberchef it's rot47 and rot13 with amount of 4 and some url decode we get this :
+<br>
+<br>
 
+```
+https://www.yourube.com/watch?=M4K35_
+```
+<br>
+it's clearly a youtube url but sadly the link doesn't work but why ? <br>
+take a look at the last part of  the link, it's the next part of the flag.
+so now our flag is :
+<br>
+<br>
 
+```
+flag{pr4c71c3_M4K35_
+```
+<br>
+now let's get back to the first encrypted long text in xanax profile :
+<br>
+<br>
 
-
+```
+crreu cue5 t hyecx5 nrsp pfpp j3au Xa b qih eaoeq qzosj vvdbt Psyquoe ui yipms uij gfcw :
+etgpp://bna.cluguyj.tsq/phbrqx/vdg2oz2pz0B
+```
 
 
 
