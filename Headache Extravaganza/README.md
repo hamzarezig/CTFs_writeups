@@ -94,7 +94,7 @@ let's visit the link and see what we got :
 <br>
 <br>
 we get a youtube video but if we take a look closely at the video discription we will see that there is two encrypted messages, <br>
-the first one is a base64 encryption and the other is some hex encryption , <br>
+the first one is a base64 encryption and the other is some hex encryption , <br>vigenere cipher
 the second part is a note that says you need to click twice to copy the first part since its too long and you cannot copy it using mouse selection, <br>
 and after doing that and using cyberchef for decryption we get a message with another encrypted link , 
 <br>
@@ -218,33 +218,78 @@ as you can see in the about we see some text with a pastebin link, let's see wha
 ```
 5AA=@i^^DDD]F<B?BI2]J<:^DHAJ5nlTc+TbcTc)TbbTbd0
 ```
-<br>
 we decrypt this with cyberchef it's rot47 and rot13 with amount of 4 and some url decode we get this :
-<br>
 <br>
 
 ```
 https://www.yourube.com/watch?=M4K35_
 ```
-<br>
 it's clearly a youtube url but sadly the link doesn't work but why ? <br>
 take a look at the last part of  the link, it's the next part of the flag.
 so now our flag is :
-<br>
 <br>
 
 ```
 flag{pr4c71c3_M4K35_
 ```
-<br>
 now let's get back to the first encrypted long text in xanax profile :
-<br>
 <br>
 
 ```
 crreu cue5 t hyecx5 nrsp pfpp j3au Xa b qih eaoeq qzosj vvdbt Psyquoe ui yipms uij gfcw :
 etgpp://bna.cluguyj.tsq/phbrqx/vdg2oz2pz0B
 ```
+this looks like a vigenere cipher <br>
+let's try decrypting this out .
+first we try xanax word ( since all the challenge talking about him... ) :
+<br>
+<br>
+![2023-07-28_11-53](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/be116d5e-38a1-4ebb-bc84-c0e3f1ddb682)
+<br>
+<br>
+Mmmm ... <br>
+we see the word free ? <br>
+how it would be possibly ? <br>
+freexanax ? : 
+<br>
+<br>
+![2023-07-28_11-55](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/eb261a16-d2c0-4687-a3b6-f9be1ca9efde)
+<br>
+<br>
+yes it is and we get a youtube link :
+
+```
+https://www.youtube.com/shorts/ezc2rz2cz0E
+```
+so this is  a youtube short link i recommend editing this link to a normal video like this 
+
+```
+https://www.youtube.com/watch/ezc2rz2cz0E
+```
+so it can be easy to manipulate . <br>
+first we see the video descryption :
+<br>
+<br>
+![2023-07-28_12-05](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/a488b2f8-b115-4045-b375-2511be0d7f63)
+<br>
+<br>
+we can see there is 5 points, with a base32 text :
+
+```
+FB2WGN3LOYQDGMRAPJTCAIJANVVWQZ3FNIQGQ2ZAM53GU4LPEBXWO3TDEBVHO2RAH4UT2PJ6FB3WKN3NPAQGK3ZAGNSWQ3LYEB3HG6BAOBZXS4DFEBRGQIDRMVSGS4BAOFSWI2LQEAQSAZTYMEQG63JAPBZXS53JOAQHA2LQEBUXE2BAOF4GKMZANF4GYYZAKNLU2USYMMQGSIDHNRSXE4TJOAQGK6DMNF3CCLBAMJUCA33FOFUXAIDYMVQSA4DFMFUW4IBTMVYCAZTFMVUWQ3DFEAUT2PJ6FBTWU4LKNVXCA4LUPJYWU2JAOBXCAYTKG5VGSIDSMZSGW3LSNBWSA4LUPJWG2ZRANNXCAYLONFVHIIDEPEQGQ3LTNJSGMIDEMZZGU4JAM5VGQ3JANZZWM33KOIQGI2TLNVVHEIB7H47SYIBVMZ4WU5ZAGNTHG2LOEA3WM33GEBZTO2THEBZWMM3XNJVW2ZRAEEQDOZTPMYQHINLXMYQGO4LNNYQGUNLEEBSHSIDEMYZXE2TREBQWM4LONFTHS3TUOMQHC2TREBQW42LKOQTXQIB7EBZGMZBTMZUW42DNEBVHC3RANZXW4IDOMFTHC3TJNYQGU4JAMFXGS2TUEBXWMYTUPIQGO3LOEBRCAZ3GGNVGSIDOPJ2XC5DGNFXG2IDNPJWSAPZJEE
+```
+<br>
+we decrypt that and we get this :
+
+```
+(uc7kv 32 zf ! mkhgej hk gvjqo ognc jwj ?)==>
+(we7mx eo 3ehmx vsx psype bh qedip qedip ! fxa om xsywip pip irh qxe3 ixlc SWMRXc i glerrip exliv!, bh oeqip xea peain 3ep feeihle )==>
+(gjqjmn qtzqji pn bj7ji rfdkmrhm qtzlmf kn anijt dy hmsjdf dfrjq gjhm nsfojr djkmjr ???, 5fyjw 3fsin 7fof s7jg sf3wjkmf ! 7fof t5wf gqmn j5d dy df3rjq afqnifynts qjq anijt'x ? rfd3finhm jqn non nafqnin jq anijt ofbtz gmn b gf3ji nzuqtfinm mzm ?)!
+```
+<br>
+so these are 3 lines with different encryption <br>
+first one is rot13 with 
+
 
 
 
