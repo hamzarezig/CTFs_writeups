@@ -28,3 +28,9 @@ now lets see the other link :
 <br>
 <br>
 <img src="images/2023-07-28_09-01.png">
+<br>
+<br>
+here we get some place in google maps but if we look closely there is a code on the truck :
+<br>
+<br>
+![2023-07-28_09-02](https://github.com/hamzarezig/CTFs_writeups/assets/99124488/a6624ad4-a729-4f6c-925a-cd9dd232faee)
