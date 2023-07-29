@@ -3,7 +3,7 @@
 ## description :
 a misc challenge that have been hosted on our local discord server.<br>
 it's a mix of cryptography & OSINT and other stuff in general.<br>
-it requires a little of knowledge in some cryptography types and a lot of thinking 
+it requires a little knowledge in some cryptography types and a lot of thinking 
 <br>
 <br>
 the challenge have only one flag but you get it in 3 parts let's see how 
