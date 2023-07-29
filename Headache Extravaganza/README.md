@@ -1,8 +1,8 @@
 # Headache Extravaganza (local discord challenge)
 
-## discription :
+## description :
 a misc challenge that have been hosted on our local discord server.<br>
-it's a mics of cryptography & OSINT and other stuff in general.<br>
+it's a mix of cryptography & OSINT and other stuff in general.<br>
 it requires a little of knowledge in some cryptography types and a lot of thinking 
 <br>
 <br>
